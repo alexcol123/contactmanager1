@@ -1,42 +1,27 @@
 import React, { Component } from 'react';
-import Contact from './components/Contact';
-import Header from './components/Header';
+import Contacts from './components/contacts/Contacts';
+import AddContact from './components/contacts/AddContact';
+
+import { Provider } from './context';
+
+import Header from './components/layout/Header';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Header branding="Nuevo Contact Manager" by="Henry Munoz Mosquera" />
+      <Provider>
+        <div className="App">
+          <Header branding="Noticias Manager" by="Jim Kazama" />
 
-        <Contact
-          name="Paca Garmenty"
-          email="pacagarmenty@yahoo.com"
-          phone="804-874-8874"
-        />
-
-        <Contact
-          name="Lupe Rocha"
-          email="LupeRocha@yahoo.com"
-          phone="800-468-7399"
-        />
-
-            <Header branding="Noticias Manager" by="Luis  Perez" />
-
-
-                  <Contact
-          name="Jina Garmenty"
-          email="pacagarmenty@yahoo.com"
-          phone="804-874-8874"
-        />
-
-        <Contact
-          name="Martha Rocha"
-          email="LupeRocha@yahoo.com"
-          phone="800-468-7399"
-        />
-      </div>
+          <div className="container">
+            <AddContact />
+            <Contacts />
+          </div>
+        </div>
+      </Provider>
     );
   }
 }
